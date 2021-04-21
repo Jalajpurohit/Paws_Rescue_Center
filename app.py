@@ -26,7 +26,7 @@ class User(db.Model):
     password = db.Column(db.String)
     pets = db.relationship('Pet', backref = 'user')
 
-db.create_all()
+db.create_all(checkfirst=True)
 
 # Create "team" user and add it to session
 team = User(full_name = "Pet Rescue Team", email = "team@petrescue.co", password = "adminpass")
